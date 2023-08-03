@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './styles/circularLoadingIndicator.module.css';
+import styles from '../styles/circularLoadingIndicator.module.css';
 import CircularProgress from './CircularProgress';
 import Controls from './Controls';
 
@@ -14,7 +14,7 @@ const CircularLoadingIndicator = ({ progress }) => {
                 setPercentage((prevPercentage) => (prevPercentage + 1) % 101);
             }, 145);
         } else if (percentage >= 100) {
-            setPercentage(0); // Reset percentage to 0 when it reaches 100
+            setPercentage(0);
             setIsPlaying(false);
         }
         return () => clearInterval(interval);

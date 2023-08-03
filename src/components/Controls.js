@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './styles/circularLoadingIndicator.module.css';
+import styles from '../styles/circularLoadingIndicator.module.css';
 
 
 const Controls = ({

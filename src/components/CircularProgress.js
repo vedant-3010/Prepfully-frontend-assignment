@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './styles/circularLoadingIndicator.module.css';
+import styles from '../styles/circularLoadingIndicator.module.css';
 
 const CircularProgress = ({
     percentage,
@@ -8,10 +8,8 @@ const CircularProgress = ({
     return (
         <div className={styles.circularProgress}>
             <svg viewBox="0 0 100 100">
-                {/* Background Circle */}
                 <circle cx="50" cy="50" r="45" fill="none" stroke="#f0f0f0" strokeWidth="8" />
 
-                {/* Progress Circle */}
                 <circle
                     className={styles.progressCircle}
                     cx="50"
