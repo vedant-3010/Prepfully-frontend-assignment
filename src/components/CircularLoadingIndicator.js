@@ -9,11 +9,11 @@ const CircularLoadingIndicator = ({ progress }) => {
 
     useEffect(() => {
         let interval;
-        if (isPlaying && percentage <= 101) {
+        if (isPlaying && percentage < 100) {
             interval = setInterval(() => {
                 setPercentage((prevPercentage) => (prevPercentage + 1) % 101);
             }, 145);
-        } else if (percentage >= 101) {
+        } else if (percentage >= 100) {
             setPercentage(0);
             setIsPlaying(false);
         }
@@ -21,7 +21,7 @@ const CircularLoadingIndicator = ({ progress }) => {
     }, [isPlaying, percentage]);
 
     const handlePlay = () => {
-        if (percentage >= 101) {
+        if (percentage >= 100) {
             setPercentage(0);
         }
         setIsPlaying(true);
