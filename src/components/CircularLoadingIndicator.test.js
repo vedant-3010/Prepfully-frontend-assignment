@@ -29,4 +29,17 @@ describe('CircularLoadingIndicator', () => {
       expect(resetPercentageIndicator).toBeInTheDocument();
     });
   });
+
+  it('should pause the loading when pause button is clicked', async () => {
+    render(<CircularLoadingIndicator />);
+    
+    act(() => {
+      jest.advanceTimersByTime(145 * 100); // Simulate reaching 100%
+    });
+
+    const pauseButton = screen.getByRole('button', { name: /pause/i });
+    fireEvent.click(pauseButton);
+
+    
+  });
 });
